@@ -1,21 +1,22 @@
 import styled from "styled-components";
 
-export const StyledDiv = styled.div`
+export const PageStyled = styled.div`
+  width: 100vw;
+  height: 100vh;
   text-align: center;
-  border: 3px solid red;
   
-  .App-logo {
+  .logo {
     height: 40vmin;
     pointer-events: none;
   }
 
   @media (prefers-reduced-motion: no-preference) {
-    .App-logo {
+    .logo {
       animation: App-logo-spin infinite 20s linear;
     }
   }
 
-  .App-header {
+  .header {
     background-color: #282c34;
     min-height: 100vh;
     display: flex;
@@ -26,7 +27,7 @@ export const StyledDiv = styled.div`
     color: white;
   }
 
-  .App-link {
+  .link {
     color: #61dafb;
   }
 
