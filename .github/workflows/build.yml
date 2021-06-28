@@ -3,7 +3,7 @@ on:
   pull_request:
     types: [opened, edited, reopened]
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
