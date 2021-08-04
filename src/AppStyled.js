@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const Wrapper = styled.div`
+  padding: 2rem;
+`;
+
 export const StyledDiv = styled.div`
   text-align: center;
   border: 3px solid red;

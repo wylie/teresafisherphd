@@ -4,9 +4,9 @@ import cn from "classnames";
 
 import { TypeStyled } from "./styled.js";
 
-const Type = ({ className, children, ...typeProps }) => {
+const Type = ({ children, className, color, ...typeProps }) => {
   return (
-    <TypeStyled className={cn(className)} {...typeProps}>
+    <TypeStyled className={cn(className)} color={color} {...typeProps}>
       {children}
     </TypeStyled>
   );
@@ -22,12 +22,30 @@ Type.propTypes = {
   /**
    * @ignore
    */
-  className: PropTypes.string
+  className: PropTypes.string,
+  color: PropTypes.string,
+  /**
+   * Is there padding?
+   */
+  padding: PropTypes.bool,
+  /**
+   * Is it the primary font-family
+   */
+  primary: PropTypes.bool,
+  /**
+   * Is it the secondary font-family
+   */
+  secondary: PropTypes.bool,
+  /**
+   * Is it the secondary font-family
+   */
+  $fontSize: PropTypes.string
 };
 
 Type.defaultProps = {
   children: "",
-  className: ""
+  className: "",
+  color: "text"
 };
 
 export default Type;
