@@ -1,23 +1,22 @@
 {
   "files": {
-    "main.css": "/teresafisherphd/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/teresafisherphd/static/js/main.5bda1408.chunk.js",
-    "main.js.map": "/teresafisherphd/static/js/main.5bda1408.chunk.js.map",
-    "runtime-main.js": "/teresafisherphd/static/js/runtime-main.68f7df02.js",
-    "runtime-main.js.map": "/teresafisherphd/static/js/runtime-main.68f7df02.js.map",
-    "static/js/2.fc740670.chunk.js": "/teresafisherphd/static/js/2.fc740670.chunk.js",
-    "static/js/2.fc740670.chunk.js.map": "/teresafisherphd/static/js/2.fc740670.chunk.js.map",
-    "static/js/3.c5486ade.chunk.js": "/teresafisherphd/static/js/3.c5486ade.chunk.js",
-    "static/js/3.c5486ade.chunk.js.map": "/teresafisherphd/static/js/3.c5486ade.chunk.js.map",
+    "main.css": "/teresafisherphd/static/css/main.64e844da.chunk.css",
+    "main.js": "/teresafisherphd/static/js/main.deea4092.chunk.js",
+    "main.js.map": "/teresafisherphd/static/js/main.deea4092.chunk.js.map",
+    "runtime-main.js": "/teresafisherphd/static/js/runtime-main.e0d4aab8.js",
+    "runtime-main.js.map": "/teresafisherphd/static/js/runtime-main.e0d4aab8.js.map",
+    "static/js/2.71555c38.chunk.js": "/teresafisherphd/static/js/2.71555c38.chunk.js",
+    "static/js/2.71555c38.chunk.js.map": "/teresafisherphd/static/js/2.71555c38.chunk.js.map",
+    "static/js/3.b46c4dfc.chunk.js": "/teresafisherphd/static/js/3.b46c4dfc.chunk.js",
+    "static/js/3.b46c4dfc.chunk.js.map": "/teresafisherphd/static/js/3.b46c4dfc.chunk.js.map",
     "index.html": "/teresafisherphd/index.html",
-    "static/css/main.6dea0f05.chunk.css.map": "/teresafisherphd/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.fc740670.chunk.js.LICENSE.txt": "/teresafisherphd/static/js/2.fc740670.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/teresafisherphd/static/media/logo.6ce24c58.svg"
+    "static/css/main.64e844da.chunk.css.map": "/teresafisherphd/static/css/main.64e844da.chunk.css.map",
+    "static/js/2.71555c38.chunk.js.LICENSE.txt": "/teresafisherphd/static/js/2.71555c38.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.68f7df02.js",
-    "static/js/2.fc740670.chunk.js",
-    "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.5bda1408.chunk.js"
+    "static/js/runtime-main.e0d4aab8.js",
+    "static/js/2.71555c38.chunk.js",
+    "static/css/main.64e844da.chunk.css",
+    "static/js/main.deea4092.chunk.js"
   ]
 }
