@@ -1,5 +1,5 @@
 // theme.js
-export const theme = {
+const theme = {
   border: {
     radius: {
       sm: "3px",
