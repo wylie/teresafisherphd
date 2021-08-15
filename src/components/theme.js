@@ -1,5 +1,5 @@
 // theme.js
-const theme = {
+export const theme = {
   border: {
     radius: {
       sm: "3px",
@@ -41,8 +41,4 @@ const theme = {
   line: {
     height: "1.5"
   }
-};
-
-module.exports = {
- ...theme
 };
