@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import theme from "../theme.js";
+import { theme } from "../theme.js";
 
 import { setPrimary, setSecondary } from "./styles/fontFamily.js";
 import { setFontSize } from "./styles/fontSize.js";

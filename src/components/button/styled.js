@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import { darken } from "polished";
 
-import theme from "../theme.js";
+import { theme } from "../theme.js";
 
 export const ButtonStyled = styled.button`
   position: relative;
