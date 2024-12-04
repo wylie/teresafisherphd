@@ -1,22 +1,15 @@
 {
   "files": {
-    "main.css": "/teresafisherphd/static/css/main.64e844da.chunk.css",
-    "main.js": "/teresafisherphd/static/js/main.c3131aa1.chunk.js",
-    "main.js.map": "/teresafisherphd/static/js/main.c3131aa1.chunk.js.map",
-    "runtime-main.js": "/teresafisherphd/static/js/runtime-main.1b786596.js",
-    "runtime-main.js.map": "/teresafisherphd/static/js/runtime-main.1b786596.js.map",
-    "static/js/2.ffbbfab5.chunk.js": "/teresafisherphd/static/js/2.ffbbfab5.chunk.js",
-    "static/js/2.ffbbfab5.chunk.js.map": "/teresafisherphd/static/js/2.ffbbfab5.chunk.js.map",
-    "static/js/3.deab0ad9.chunk.js": "/teresafisherphd/static/js/3.deab0ad9.chunk.js",
-    "static/js/3.deab0ad9.chunk.js.map": "/teresafisherphd/static/js/3.deab0ad9.chunk.js.map",
+    "main.css": "/teresafisherphd/static/css/main.8d6cdf5a.css",
+    "main.js": "/teresafisherphd/static/js/main.f956a053.js",
+    "static/js/488.1e58130c.chunk.js": "/teresafisherphd/static/js/488.1e58130c.chunk.js",
     "index.html": "/teresafisherphd/index.html",
-    "static/css/main.64e844da.chunk.css.map": "/teresafisherphd/static/css/main.64e844da.chunk.css.map",
-    "static/js/2.ffbbfab5.chunk.js.LICENSE.txt": "/teresafisherphd/static/js/2.ffbbfab5.chunk.js.LICENSE.txt"
+    "main.8d6cdf5a.css.map": "/teresafisherphd/static/css/main.8d6cdf5a.css.map",
+    "main.f956a053.js.map": "/teresafisherphd/static/js/main.f956a053.js.map",
+    "488.1e58130c.chunk.js.map": "/teresafisherphd/static/js/488.1e58130c.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.1b786596.js",
-    "static/js/2.ffbbfab5.chunk.js",
-    "static/css/main.64e844da.chunk.css",
-    "static/js/main.c3131aa1.chunk.js"
+    "static/css/main.8d6cdf5a.css",
+    "static/js/main.f956a053.js"
   ]
 }
