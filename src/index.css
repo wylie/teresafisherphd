@@ -1,9 +1,9 @@
 :root {
   color-scheme: light dark;
-  --text-color-dark: #333;
-  --text-color-light: #efefef;
-  --background-color-dark: #efefef;
-  --background-color-light: #333;
+  --text-color-dark: #efefef;
+  --text-color-light: #333;
+  --background-color-dark: #333;
+  --background-color-light: #efefef;
 }
 
 body {
