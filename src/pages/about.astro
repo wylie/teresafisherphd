@@ -2,46 +2,17 @@
 import Layout from '../layouts/Layout.astro';
 import Heading from '../components/Heading.astro';
 import Footer from '../components/Footer.astro';
+import { Content as About } from '../components/about.md';
 
+import '../assets/global.css';
 ---
 <Layout>
 	<Heading />
 	<main>
-		<h2>About</h2>
-		Who am I?
-		In 4th grade, my school started a peer mediation program, and I was trained to help other kids solve problems and de-escalate conflict. I loved listening and asking questions, and my young, anxious self really loved helping kids not get in trouble. As I got older, I kept finding myself drawn to roles where I was able to connect with others, learn about their experiences, and support them in learning about themselves and their best next steps (e.g., camp counselor, Resident Assistant, teacher). As I grew my interest in brains, bodies, and the impact of identity, systems of oppression, and life experiences on functioning and stress levels, I found Counseling Psychology as a path that allowed me to lean in to identity exploration and social justice as foundational to supporting folks in healing, moving forward, and finding joy. Along the way I have had my own experiences in therapy that helped me respond more meaningfully to anxiety, overwhelm, my relationship with my body, and navigating marriage and parenthood. My journey has helped me share learning and growing in many environments, and the power of connection–with each other and with ourselves–keeps me energized and curious. 
-
-		I also live a full life outside of the therapy room! I share my home with a husband, a kiddo, 3 mammals (a dog and 2 cats that my kid wanted but I have come to very much enjoy), and sometimes critters of other kinds (currently, Sea Monkeys…:/ ). I like to go outside, always have 3-4 hobbies that I either want more time for or would like to learn, and am always chasing something fun and/or a nap. Depending on my moment-by-moment relationship with the news, I like podcasts. Also dance parties. Also cooking with too much garlic and treats. I like plants a lot but am not good at keeping them alive.  I'm also working to manage my anxiety with therapy and skills, just like any other human. Hi!
-
-		My Approach
-		We're in this together. Therapy won't work very well (with me, or with anyone) if only one of us is showing up to be curious, be reflective, challenge ourselves, and tell the truth. I always hope that meeting with me is not as uncomfortable as you fear. I am actively engaged, asking questions you haven't thought about before, and helping you tune in to your body and be present. I will respond with curiosity, not judgement when you share yourself, and, even though it can be difficult, I'll pay attention to how our identities show up in therapy. Humor is one of my go-to coping strategies, so in addition to working hard, we'll find moments of laughter, and we will celebrate your strengths along the way. These things help reduce symptoms and improve relationships outside of therapy.
-
-		Some of my core values:
-		Respect and value people.
-		Humans are capable of change and moving through challenge in new ways.
-		When we're all thriving, we're all thriving. 
-		We all have blind spots and we're all constantly learning, it's hard to have these pointed out, but the learning and connection that comes after is worth it.
-		These core values shape who I am in the world and how I do therapy. Often the mental health symptoms that get in the way are rooted in experiences you've had that make you question your worth, doubt yourself, or highlight a sense that you are “not good enough.” Sometimes these messages are based on some aspect of your identity. Our job in therapy is to help strengthen your sense of yourself and the ability to respond to those messages–whether they are coming from internally or an external system–with empowerment. My approach is client centered, which means I will take some time to get to know you before we explore what actions (changes, homework, skills to build) make sense.
-
-		Do I use any specific treatments?
-		For those looking for specific kinds of treatment, I incorporate ACT (Acceptance and Commitment Therapy), which is a kind of CBT (Cognitive Behavioral Therapy). This includes mindful awareness skills, identifying emotions, awareness of unhelpful thinking, learning to bring ourselves back to the present moment, and noticing self-judgement. How structured this is depends on your needs. I am also trained in EMDR, which is another way to learn and adapt, particularly after trauma. My approach is relational and trauma-informed every step of the way.
-
-		Education, Licensure, & Training
-
-		Degrees
-		APA Accredited Counseling Psychology Ph.D., Auburn University, Auburn, AL
-		Psychology B.A., The University of Arizona, Tucson, AZ
-		Secondary Education, English & Psychology, B.A., The University of Arizona, Tucson, AZ
-		Training
-		APA Accredited Internship: Student Counseling Service, Texas A&M University, College Station, TX
-		Post-Docoral Fellowship: Counseling and Psychological Services, University of Nevada, Las Vegas
-		EMDR Level 1 Training, EMDR Advanced Trainings
-		Ongoing Continuing Education related to Multicultural Humility, Social Justice, Ethics, Client Care, and Evidence-Based Practices
-		Licensure
-		Licensed Health Service Psychologist
-		Massachusetts #9516
-		North Carolina #620
-
+		<div class="inner-layout">
+			<h2>About</h2>
+			<About />
+		</div>
 	</main>
 	<Footer />
 </Layout>

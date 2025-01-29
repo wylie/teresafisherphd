@@ -1,11 +1,12 @@
+---
+import Meta from '../components/Meta.astro'
+import '../assets/global.css'
+---
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Teresa Fisher, PhD.</title>
+		<Meta >
 	</head>
 	<body class="layout">
 		<slot />
@@ -21,11 +22,8 @@
 	}
 	.layout {
 		display: grid;
-		grid-template-rows: auto auto auto 1fr auto;
+		grid-template-rows: auto 1fr auto;
 		gap: 1rem;
-		text-align: center;
 		min-height: 100vh;
-		max-width: 800px;
-		margin: auto;
 	}
 </style>

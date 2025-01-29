@@ -1,19 +1,24 @@
 ---
 import Navigation from './Navigation.astro';
 import logo from '../assets/logo.png';
+import '../assets/global.css';
 
 ---
-  <h1>Teresa Fisher PhD. / Milkweed Mental Health</h1>
-  <img src={logo.src} alt="Milkweed Mental Health Logo" />
-  <Navigation />
+<header>
+  <div class="inner-layout">
+    <h1>Teresa Fisher PhD. / Milkweed Mental Health</h1>
+    <img src={logo.src} alt="Milkweed Mental Health Logo" />
+    <Navigation />
+  </div>
+</header>
 
-  <style>
-    h1 {
-      font-size: 2rem;
-      color: var(--color-primary);
-    }
+<style>
+  h1 {
+    font-size: 2rem;
+    color: var(--color-primary);
+  }
 
-    img {
-      width: 200px;
-    }
-  </style>
+  img {
+    width: 200px;
+  }
+</style>
