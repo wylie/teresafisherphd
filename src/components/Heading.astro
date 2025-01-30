@@ -1,24 +1,23 @@
 ---
 import Navigation from './Navigation.astro';
-import logo from '../assets/logo.png';
 import '../assets/global.css';
 
 const {class: className, ...rest } = Astro.props;
 ---
-<header class={className} {...rest}>
+<header class=`header ${className}` {...rest}>
   <div class="inner-layout">
-    <h1>Teresa Fisher PhD. / Milkweed Mental Health</h1>
-    <img src={logo.src} alt="Milkweed Mental Health Logo" />
+    <h1 class="title"><span>Teresa Fisher PhD.</span> <span>Milkweed Mental Health</span></h1>
     <Navigation />
   </div>
 </header>
 
 <style>
-  h1 {
-    font-size: 2rem;
+  .title {
+    font-size: 1.75rem;
     color: var(--color-primary);
+    text-align: center;
   }
-  img {
-    width: 200px;
+  .title span {
+    white-space: nowrap;
   }
 </style>

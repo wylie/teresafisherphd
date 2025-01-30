@@ -1,20 +1,47 @@
 ---
 import '../assets/global.css';
+import logo from '../assets/logo.png';
 const { class: className, ...rest } = Astro.props;
 ---
 
-<footer class={className} {...rest}>
+<footer class=`footer ${className}` {...rest}>
   <div class="inner-layout">
-    Footer
+    <img class="image" src={logo.src} alt="Milkweed Mental Health Logo" />
+    <address>
+      <p><a href="mailto:teresa@teresafisherphd.com">teresa@teresafisherphd.com</a> | <a href="tel:+18282762290">(828) 276-2290</a></p>
+      <p class="address">
+        <a href="geo:35.594844,-82.551677">
+          <span>9 SW Pack Sq</span>
+          <span>Suite 204 E1-A</span>
+          <span>Asheville, NC 28801</span>
+        </a>
+      </p>
+    </address>
+    <small>&copy; 2025 Milkweed Mental Health | Site by <a href="https://wyliefisher.com">Wylie</a></small>
   </div>
 </footer>
 
 <style>
-  footer {
+  .footer {
+    display: flex;
     background-color: var(--color-2);
-    height: 100px;
   }
-  footer div {
+  .footer .inner-layout {
+    display: grid;
     text-align: center;
+    padding: 1rem 1rem .5rem;
+  }
+  .image {
+    width: 200px;
+    justify-self: center;
+  }
+  .address span {
+    white-space: nowrap;
+  }
+  address {
+    font-style: normal;
+  }
+  small {
+    margin-top: 1rem;
   }
 </style>
