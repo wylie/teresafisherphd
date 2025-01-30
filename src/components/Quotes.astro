@@ -1,0 +1,57 @@
+---
+import quotes from '../assets/quotes.json';
+---
+
+<script>
+  import quotes from '../assets/quotes.json';
+  function getRandomQuote() {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    const quote = quotes[randomIndex].quote;
+    const author = quotes[randomIndex].author;
+    const elem = document.getElementById('quote-container');
+    const authorBlock = document.createElement('span');
+    elem.innerText = quote;
+    authorBlock.style = 'display: block; text-align: right; font-style: italic;';
+    authorBlock.innerText = `- ${author}`;
+    elem.appendChild(authorBlock);
+    return elem;
+  }
+  function appendQuote() {
+    const quoteContainer = document.getElementById('quote-container');
+    const quoteElem = getRandomQuote();
+    quoteContainer.appendChild(quoteElem);
+  }
+  appendQuote();
+</script>
+<blockquote id="quote-container" class="quote"></blockquote>
+
+<style>
+  .quote {
+    background-color: var(--color-3);
+    font-size: 14px;
+    max-width: 100%;
+    margin: 0 0 2rem;
+  }
+  @media screen and (min-width: 600px) {
+    .quote {
+      width: 300px;
+      float: right;
+      margin: 0 0 2rem 2rem;
+    }
+  }
+  blockquote {
+    margin: 0;
+    padding: 1rem;
+    position: relative;
+  }
+  blockquote::before {
+    content: open-quote;
+    font-size: 8rem;
+    vertical-align: -0.4em;
+    line-height: 0;
+    position: absolute;
+    top: 30px;
+    left: -20px;
+  }
+  
+</style>
