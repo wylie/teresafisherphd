@@ -1,7 +1,9 @@
 ---
 import '../assets/global.css';
+const { class: className, ...rest } = Astro.props;
 ---
-<footer>
+
+<footer class={className} {...rest}>
   <div class="inner-layout">
     Footer
   </div>

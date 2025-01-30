@@ -1,18 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Heading from '../components/Heading.astro';
-import Footer from '../components/Footer.astro';
 import { Content as Contact } from '../components/contact.md';
 import '../assets/global.css';
 
 ---
 <Layout>
-	<Heading />
-	<main>
-		<div class="inner-layout">
-			<h2>Contact</h2>
-			<Contact />
-		</div>
-	</main>
-	<Footer />
+	<div class="inner-layout">
+		<h2>Contact</h2>
+		<Contact />
+	</div>
 </Layout>

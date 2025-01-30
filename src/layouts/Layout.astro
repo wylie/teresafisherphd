@@ -1,5 +1,7 @@
 ---
 import Meta from '../components/Meta.astro'
+import Heading from '../components/Heading.astro';
+import Footer from '../components/Footer.astro';
 import '../assets/global.css'
 ---
 
@@ -9,7 +11,11 @@ import '../assets/global.css'
 		<Meta >
 	</head>
 	<body class="layout">
-		<slot />
+		<Heading class="main-content" />
+		<main class="main-content">
+			<slot />
+		</main>
+		<Footer class="main-content" />
 	</body>
 </html>
 

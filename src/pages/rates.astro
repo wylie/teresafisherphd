@@ -1,18 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Heading from '../components/Heading.astro';
-import Footer from '../components/Footer.astro';
 import { Content as Rates } from '../components/rates.md';
 import '../assets/global.css';
 
 ---
 <Layout>
-	<Heading />
-	<main>
-		<div class="inner-layout">
-      <h2>Rates & Services</h2>
-      <Rates />
-    </div>
-	</main>
-	<Footer />
+	<div class="inner-layout">
+		<h2>Rates & Services</h2>
+		<Rates />
+	</div>
 </Layout>

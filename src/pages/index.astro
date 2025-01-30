@@ -1,18 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Heading from '../components/Heading.astro';
-import Footer from '../components/Footer.astro';
 import { Content as Index } from '../components/index.md';
 import '../assets/global.css';
 ---
 
 <Layout>
-	<Heading />
-	<main>
-		<div class="inner-layout">
-			<h2>Welcome</h2>
-			<Index />
-		</div>
-	</main>
-	<Footer />
+	<div class="inner-layout">
+		<h2>Welcome</h2>
+		<Index />
+	</div>
 </Layout>

@@ -27,3 +27,6 @@ h3 {
   max-width: 800px;
   margin: auto;
 }
+.main-content {
+  padding: 0 1rem;
+}
