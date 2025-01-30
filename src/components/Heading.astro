@@ -1,23 +1,63 @@
 ---
 import Navigation from './Navigation.astro';
+import logoSm from '../assets/logo-small.png';
 import '../assets/global.css';
 
 const {class: className, ...rest } = Astro.props;
 ---
 <header class=`header ${className}` {...rest}>
   <div class="inner-layout">
-    <h1 class="title"><span>Teresa Fisher PhD.</span> <span>Milkweed Mental Health</span></h1>
+    <h1 class="title"><span class="name">Teresa Fisher PhD.</span><img src={logoSm.src} class="logo-small" alt="logo" width="100" /><span class="llc">Milkweed Mental Health</span></h1>
     <Navigation />
   </div>
 </header>
 
 <style>
   .title {
+    display: grid;
+    grid-column-gap: 1rem;
     font-size: 1.75rem;
+    justify-self: center;
+    align-items: center;
     color: var(--color-primary);
-    text-align: center;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    margin: .5rem 0;
   }
   .title span {
     white-space: nowrap;
+  }
+  .title .name {
+    grid-column-start: 2;
+    grid-row-start: 1;
+  }
+  .title .llc {
+    grid-row-start: 2;
+    grid-column-start: 2;
+  }
+  .title .logo-small {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+  @media screen and (min-width: 650px) {
+    .title {
+      grid-template-columns: auto auto auto;
+      grid-template-rows: 1fr;
+      grid-column-gap: .5rem;
+    }
+    .title .name {
+      grid-column-start: 1;
+      grid-row-start: unset;
+    }
+    .title .llc {
+      grid-row-start: unset;
+      grid-column-start: 3;
+    }
+    .title .logo-small {
+      grid-column-start: 2;
+      grid-row-start: unset;
+      grid-row-end: unset;
+    }
   }
 </style>
