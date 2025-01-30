@@ -1,28 +1,35 @@
 ---
 import '../assets/global.css';
 ---
-<ul class="navigation">
-  <li class="navigation-item"><a href="/teresafisherphd/">Welcome</a></li>
-  <li class="navigation-item"><a href="/teresafisherphd/about">About</a></li>
-  <li class="navigation-item"><a href="/teresafisherphd/services">Services</a></li>
-  <li class="navigation-item"><a href="/teresafisherphd/rates">Rates & Insurance</a></li>
-  <li class="navigation-item"><a href="/teresafisherphd/contact">Contact</a></li>
-</ul>
+<nav class="navigation">
+  <ul class="nav-list">
+    <li class="nav-item"><a href="/teresafisherphd/">Welcome</a></li>
+    <li class="nav-item"><a href="/teresafisherphd/about">About</a></li>
+    <li class="nav-item"><a href="/teresafisherphd/services">Services</a></li>
+    <li class="nav-item"><a href="/teresafisherphd/rates">Rates & Insurance</a></li>
+    <li class="nav-item"><a href="/teresafisherphd/contact">Contact</a></li>
+  </ul>
+</nav>
 
 <style>
   .navigation {
+    border-bottom: 3px double var(--color-2);
+    border-top: 3px double var(--color-2);
+    padding: .5rem 0;
+  }
+  .nav-list {
     display: flex;
     flex-wrap: wrap;
     justify-self: center;
+    justify-content: center;
     list-style-type: none;
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
     width: fit-content;
+    row-gap: .1rem;
+    column-gap: 1rem;
   }
-  .navigation-item {
+  .nav-item {
     white-space: nowrap;
-  }
-  .navigation-item:not(:last-child) {
-    margin-right: 1rem;
   }
 </style>
