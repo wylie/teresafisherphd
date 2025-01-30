@@ -8,13 +8,64 @@ import '../assets/global.css';
 		<h2>Contact</h2>
 		<p>Please contact me to set up a 20-ish minute free consultation phone call. In this call  I will ask you some questions about what you are experiencing and you can also ask me questions you have about the way that I approach therapy or anything else.</p>
 		<p>Fields do you want in the contact form:</p>
-		<ul>
-			<li>Name (first, last)</li>
-			<li>Email</li>
-			<li>Phone Number.</li>
-			<li>Brief description of what you have been experiencing that is prompting you to reach out now.</li>
-		</ul>
+		<form>
+			<label for="name">Name</label>
+			<input type="text" id="name" placeholder="Frst, Last" />
+			<label for="email">Email</label>
+			<input type="email" id="email" placeholder="Email" pattern=".+@example\.com" size="30" required />
+			<label for="telephone">Phone Number</label>
+			<input type="tel" id="telephone" placeholder="Phone Number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required />
+			<label for="description">Description</label>
+			<textarea id="description" name="description" placeholder="Brief description of what you have been experiencing that is prompting you to reach out now." autocorrect="on"></textarea>
+			<button type="submit">Submit</button>
+		</form>
 		<p><em>All services are confidential.</em></p>
 		<p><em>If you need immediate support call <strong>911</strong> or <strong>988</strong></em></p>
 	</div>
 </Layout>
+
+<style>
+	form {
+		display: flex;
+		flex-direction: column;
+		width: 75%;
+	}
+	form input:nth-child(1n):not(:last-child) {
+		margin-bottom: 1rem;
+	}
+	form textarea {
+		resize: vertical;
+	}
+	form label {
+		margin: 0;
+		font-weight: 500;
+	}
+	form input,
+	form textarea {
+		max-width: 400px;
+		padding: .5rem;
+		border-radius: 5px;
+		border: 1px solid var(--color-2);
+	}
+	form input:focus,
+	form textarea:focus {
+		outline-width: 2px;
+		outline-color: var(--color-1);
+	}
+	form button {
+		margin-top: 1rem;
+		border: 0;
+    padding: .5rem 1rem;
+    width: fit-content;
+    background-color: var(--color-2);
+    border-radius: 5px;
+		cursor: pointer;
+		color: #333;
+	}
+	form button:hover {
+    background-color: var(--color-1);
+	}
+	form button:active {
+    
+	}
+</style>
