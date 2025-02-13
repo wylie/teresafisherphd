@@ -7,21 +7,22 @@ const {class: className, ...rest } = Astro.props;
 ---
 <header class=`header ${className}` {...rest}>
   <div class="inner-layout">
-    <h1 class="title"><span class="name">Teresa B. Fisher PhD.</span><img src={logoSm.src} class="logo-small" alt="logo" width="100" /><span class="llc">Milkweed Mental Health</span></h1>
+    <h1 class="title"><a href="/teresafisherphd/" class="title-link"><span class="name">Teresa B. Fisher PhD.</span><img src={logoSm.src} class="logo-small" alt="logo" width="100" /><span class="llc">Milkweed Mental Health</span></a></h1></a>
     <Navigation />
   </div>
 </header>
 
 <style>
-  .header {
-    
-  }
-  .title {
+  .title-link  {
     display: grid;
     grid-column-gap: 1rem;
-    font-size: 1.35rem;
     justify-self: center;
     align-items: center;
+    text-decoration: none;
+    color: var(--color-primary);
+  }
+  .title {
+    font-size: 1.35rem;
     color: var(--color-primary);
     grid-template-columns: auto 1fr;
     grid-template-rows: auto auto;

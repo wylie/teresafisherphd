@@ -4,14 +4,87 @@ import '../assets/global.css';
 <nav class="navigation">
   <ul class="nav-list">
     <li class="nav-item"><a href="/teresafisherphd/">Welcome</a></li>
-    <li class="nav-item"><a href="/teresafisherphd/about">About</a></li>
-    <li class="nav-item"><a href="/teresafisherphd/services">Services</a></li>
+    <li class="nav-item" id="about">
+      About
+      <ul class="about-list">
+        <li><a href="/teresafisherphd/about/who-am-i">Who Am I?</a></li>
+        <li><a href="/teresafisherphd/about/my-approach">My Approach</a></li>
+        <li><a href="/teresafisherphd/about/education-training">Education & Training</a></li>
+      </ul>
+    </li>
+    <li class="nav-item" id="services">
+      Services
+      <ul class="services-list">
+        <li><a href="/teresafisherphd/services/individual-therapy">Individual Therapy</a></li>
+        <li><a href="/teresafisherphd/services/supervision-consultation">Supervision & Consultation</a></li>
+        <li><a href="/teresafisherphd/services/community-outreach">Community Outreach</a></li>
+      </ul>
+    </li>
     <li class="nav-item"><a href="/teresafisherphd/rates">Rates & Insurance</a></li>
     <li class="nav-item"><a href="/teresafisherphd/contact">Contact</a></li>
   </ul>
 </nav>
 
+<!-- TODO: crude, but it works. it's late. I'll clean this up at a later date -->
+<script>
+  const aboutItems = document.querySelectorAll('.about-list');
+  const aboutElement = document.getElementById('about');
+  aboutElement.addEventListener('click', (event) => {
+    event.stopPropagation();
+    aboutItems[0].classList.toggle('visible');
+  });
+  document.addEventListener('click', (event) => {
+    if (!aboutElement.contains(event.target)) {
+      aboutItems[0].classList.remove('visible');
+    }
+  });
+
+  const servicesItems = document.querySelectorAll('.services-list');
+  const servicesElement = document.getElementById('services');
+  servicesElement.addEventListener('click', (event) => {
+    event.stopPropagation();
+    servicesItems[0].classList.toggle('visible');
+  });
+  document.addEventListener('click', (event) => {
+    if (!servicesItems.contains(event.target)) {
+      servicesItems[0].classList.remove('visible');
+    }
+  });
+</script>
+
 <style>
+  #about,
+  #services {
+    position: relative;
+    cursor: pointer;
+    color: var(--color-6);
+    text-decoration: underline;
+  }
+  .about-list,
+  .services-list {
+    opacity: 0;
+    position: absolute;
+    list-style-type: none;
+    margin: 0;
+    background-color: var(--color-4);
+    padding: 0;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px var(--color-1);
+    overflow: hidden;
+    transition: opacity .25s;
+  }
+  .about-list li,
+  .services-list li {
+    padding: .25rem 1rem;
+  }
+  .about-list li:hover,
+  .services-list li:hover {
+    background-color: var(--color-3);
+  }
+  .about-list.visible,
+  .services-list.visible {
+    opacity: 1;
+  }
   .navigation {
     border-bottom: 3px double var(--color-2);
     border-top: 3px double var(--color-2);
