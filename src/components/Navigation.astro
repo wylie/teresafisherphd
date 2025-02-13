@@ -26,6 +26,8 @@ import '../assets/global.css';
 </nav>
 
 <!-- TODO: crude, but it works. it's late. I'll clean this up at a later date -->
+<!-- TODO: the dropdowns cover each other up when both open. opening one, then a second should close the first -->
+<!-- TODO: the services dropdown doesn't close when clicked outside of it -->
 <script>
   const aboutItems = document.querySelectorAll('.about-list');
   const aboutElement = document.getElementById('about');
@@ -59,6 +61,8 @@ import '../assets/global.css';
     cursor: pointer;
     color: var(--color-6);
     text-decoration: underline;
+    justify-content: center;
+    display: flex;
   }
   .about-list,
   .services-list {
@@ -71,7 +75,10 @@ import '../assets/global.css';
     border-radius: 6px;
     box-shadow: 0 1px 4px var(--color-1);
     overflow: hidden;
-    transition: opacity .25s;
+    transition: all .25s;
+    z-index: 2;
+    top: 1.5rem;
+    visibility: hidden;
   }
   .about-list li,
   .services-list li {
@@ -84,6 +91,7 @@ import '../assets/global.css';
   .about-list.visible,
   .services-list.visible {
     opacity: 1;
+    visibility: visible;
   }
   .navigation {
     border-bottom: 3px double var(--color-2);
