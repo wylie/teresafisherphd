@@ -1,9 +1,7 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import '../assets/global.css';
-
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-<Layout>
+<BaseLayout>
 	<div class="inner-layout">
 		<h2>Rates & Services</h2>
 		<p>Therapy is a valuable resource. Affording it in a sustainable way is important.</p>
@@ -17,11 +15,11 @@ import '../assets/global.css';
 		<h3>Good Faith Estimate</h3>
 		<p>In accordance with the <a href="https://www.cms.gov/NoSurprises" target="_blank">No Suprise Act</a>, you're entitled to a Good Faith Estimate that outlines the expected costs of services before we begin.</p>
 	</div>
-</Layout>
+</BaseLayout>
 
 <style>
-.define {
-	cursor: help;
-	border-bottom: 1px dashed var(--color-7);
-}
+	.define {
+		cursor: help;
+		border-bottom: 1px dashed var(--color-7);
+	}
 </style>

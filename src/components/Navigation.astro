@@ -1,5 +1,4 @@
 ---
-import '../assets/global.css';
 ---
 <nav class="navigation">
   <ul class="nav-list">
@@ -31,24 +30,26 @@ import '../assets/global.css';
 <script>
   const aboutItems = document.querySelectorAll('.about-list');
   const aboutElement = document.getElementById('about');
+  const servicesItems = document.querySelectorAll('.services-list');
+  const servicesElement = document.getElementById('services');
+
   aboutElement.addEventListener('click', (event) => {
     event.stopPropagation();
     aboutItems[0].classList.toggle('visible');
+    servicesItems[0].classList.remove('visible'); // Close services dropdown
   });
+
+  servicesElement.addEventListener('click', (event) => {
+    event.stopPropagation();
+    servicesItems[0].classList.toggle('visible');
+    aboutItems[0].classList.remove('visible'); // Close about dropdown
+  });
+
   document.addEventListener('click', (event) => {
     if (!aboutElement.contains(event.target)) {
       aboutItems[0].classList.remove('visible');
     }
-  });
-
-  const servicesItems = document.querySelectorAll('.services-list');
-  const servicesElement = document.getElementById('services');
-  servicesElement.addEventListener('click', (event) => {
-    event.stopPropagation();
-    servicesItems[0].classList.toggle('visible');
-  });
-  document.addEventListener('click', (event) => {
-    if (!servicesItems.contains(event.target)) {
+    if (!servicesElement.contains(event.target)) {
       servicesItems[0].classList.remove('visible');
     }
   });

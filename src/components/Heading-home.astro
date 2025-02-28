@@ -1,14 +1,14 @@
 ---
+import { Image } from 'astro:assets';
 import Navigation from './Navigation.astro';
-import logo from '../assets/logo-large.png';
-import '../assets/global.css';
+import logo from '../assets/images/logo-large.png';
 
 const {class: className, ...rest } = Astro.props;
 ---
 <header class=`header ${className}` {...rest}>
   <div class="inner-layout">
     <h1 class="title">
-      <img src={logo.src} class="logo-small" alt="logo" />
+      <Image src={logo} class="logo" alt="logo" />
     </h1>
     <Navigation />
   </div>
@@ -42,8 +42,9 @@ const {class: className, ...rest } = Astro.props;
     .title .name {
       white-space: nowrap;
     }
-    .title .logo-small {
+    .title .logo {
       width: 75%;
+      height: auto;
     }
   }
 </style>

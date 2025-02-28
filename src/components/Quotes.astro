@@ -1,7 +1,8 @@
 ---
-import quotes from '../assets/quotes.json';
+const { float = "" } = Astro.props;
 ---
 
+<!-- TODO: clean this up a lot, I don't like all the element creation -->
 <script>
   import quotes from '../assets/quotes.json';
   function getRandomQuote() {
@@ -23,28 +24,19 @@ import quotes from '../assets/quotes.json';
   }
   appendQuote();
 </script>
-<blockquote id="quote-container" class="quote"></blockquote>
+
+<blockquote id="quote-container" class=`quote ${float}`></blockquote>
 
 <style>
   .quote {
     background-color: var(--color-3);
     font-size: 14px;
     max-width: 100%;
-    margin: 0 0 2rem;
-  }
-  @media screen and (min-width: 600px) {
-    .quote {
-      width: 300px;
-      float: right;
-      margin: 0 0 2rem 2rem;
-    }
-  }
-  blockquote {
     margin: 0;
     padding: 1rem;
     position: relative;
   }
-  blockquote::before {
+  .quote::before {
     content: open-quote;
     font-size: 8rem;
     vertical-align: -0.4em;
@@ -53,5 +45,20 @@ import quotes from '../assets/quotes.json';
     top: 30px;
     left: -20px;
   }
-  
+  @media screen and (min-width: 600px) {
+    .quote {
+      float: none;
+      margin: 1rem;
+    }
+    .quote.left {
+      float: left;
+      width: 300px;
+      margin-left: 0;
+    }
+    .quote.right {
+      float: right;
+      width: 300px;
+      margin-right: 0;
+    }
+  }
 </style>

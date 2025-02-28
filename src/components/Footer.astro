@@ -1,12 +1,12 @@
 ---
-import '../assets/global.css';
-import logo from '../assets/logo.png';
-const { class: className, ...rest } = Astro.props;
+import { Image } from 'astro:assets';
+import logo from '../assets/images/logo.png';
+const { class: className } = Astro.props;
 ---
 
-<footer class=`footer ${className}` {...rest}>
+<footer class=`footer ${className}`>
   <div class="inner-layout">
-    <img class="image" src={logo.src} alt="Milkweed Mental Health Logo" />
+    <Image class="image" src={logo} alt="Milkweed Mental Health Logo" />
     <address>
       <p><a href="mailto:teresa@teresafisherphd.com">teresa@teresafisherphd.com</a> <span class="divider">|</span> <a href="tel:+18282762290">(828) 276-2290</a></p>
       <p class="address">
@@ -33,6 +33,7 @@ const { class: className, ...rest } = Astro.props;
   }
   .image {
     width: 200px;
+    height: auto;
     justify-self: center;
   }
   .address span {

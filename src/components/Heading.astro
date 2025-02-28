@@ -1,13 +1,13 @@
 ---
+import { Image } from 'astro:assets';
 import Navigation from './Navigation.astro';
-import logoSm from '../assets/logo-small.png';
-import '../assets/global.css';
+import logoSm from '../assets/images/logo-small.png';
 
 const {class: className, ...rest } = Astro.props;
 ---
 <header class=`header ${className}` {...rest}>
   <div class="inner-layout">
-    <h1 class="title"><a href="/teresafisherphd/" class="title-link"><span class="name">Teresa B. Fisher PhD.</span><img src={logoSm.src} class="logo-small" alt="logo" width="100" /><span class="llc">Milkweed Mental Health</span></a></h1></a>
+    <h1 class="title"><a href="/teresafisherphd/" class="title-link"><span class="name">Teresa B. Fisher PhD.</span><Image src={logoSm} class="logo-small" alt="logo" width="100" /><span class="llc">Milkweed Mental Health</span></a></h1></a>
     <Navigation />
   </div>
 </header>

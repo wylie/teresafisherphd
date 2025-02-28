@@ -1,0 +1,88 @@
+---
+import Meta from '../components/Meta.astro'
+import HeadingInternal from '../components/Heading.astro';
+import HeadingHome from '../components/Heading-home.astro';
+import Footer from '../components/Footer.astro';
+
+const { pathname } = Astro.url;
+console.log(pathname);
+let Heading;
+
+if (pathname === '/teresafisherphd/') {
+  Heading = HeadingHome;
+} else {
+  Heading = HeadingInternal;
+}
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<Meta />
+	</head>
+	<body class="layout">
+		<Heading class="main-content" />
+		<main class="main-content">
+			<slot />
+		</main>
+		<Footer class="main-content" />
+	</body>
+</html>
+
+<style>
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
+	.layout {
+		display: grid;
+		grid-template-rows: auto 1fr auto;
+		gap: 1rem;
+		min-height: 100vh;
+	}
+</style>
+<style is:global>
+	:root {
+		--color-1: #608A70;
+		--color-2: #A4C3A4;
+		--color-3: #FFD64A;
+		--color-4: #FFF5E4;
+		--color-5: #F47D20;
+		--color-6: #BF381E;
+		--color-7: #333;
+	}
+
+	html,
+	body {
+		font-family: "Outfit", serif;
+		font-optical-sizing: auto;
+		font-weight: 200;
+		font-style: normal;
+		line-height: 1.5;
+		background-color: var(--color-4);
+		color: var(--color-7);
+	}
+
+	h1,
+	h2,
+	h3 {
+		font-weight: 300;
+	}
+
+	a {
+		color: var(--color-6);
+	}
+	a:hover {
+		color: var(--color-6);
+	}
+
+	.inner-layout {
+		max-width: 800px;
+		margin: auto;
+	}
+	.main-content {
+		padding: 0 1rem;
+	}
+</style>
