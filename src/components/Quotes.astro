@@ -25,29 +25,49 @@ const { float = "" } = Astro.props;
   appendQuote();
 </script>
 
-<blockquote id="quote-container" class=`quote ${float}`></blockquote>
+<div class="wrap">
+  <blockquote id="quote-container" class=`quote ${float}`></blockquote>
+  <div></div>
+</div>
 
 <style>
+  .wrap {
+    position: relative;
+    z-index: 2;
+  }
   .quote {
-    background-color: var(--color-3);
+    position: relative;
+    background-color: var(--color-5);
+    color: white;
     font-size: 14px;
     max-width: 100%;
     margin: 0;
     padding: 1rem;
-    position: relative;
+    z-index: 2;
+  }
+  .quote ~ div {
+    position: absolute;
+    padding: 1rem;
+    background-color: var(--color-3);
+    top: -10px;
+    right: 10px;
+    bottom: -27px;
+    left: -10px;
+    z-index: 1;
+    margin: 1rem;
   }
   .quote::before {
+    color: var(--color-7);
     content: open-quote;
     font-size: 8rem;
     vertical-align: -0.4em;
     line-height: 0;
     position: absolute;
     top: 30px;
-    left: -20px;
+    left: -10px;
   }
   @media screen and (min-width: 600px) {
     .quote {
-      float: none;
       margin: 1rem;
     }
     .quote.left {
