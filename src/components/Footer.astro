@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import logo from '../assets/images/logo.png';
 const { class: className } = Astro.props;
+const currentYear = new Date().getFullYear();
 ---
 
 <footer class=`footer ${className}`>
@@ -17,7 +18,7 @@ const { class: className } = Astro.props;
         </a>
       </p>
     </address>
-    <small>&copy; 2025 Milkweed Mental Health | Site by <a class="dark" href="https://wyliefisher.com">Wylie</a></small>
+    <small>&copy; {currentYear} Teresa Fisher, PhD. PLLC | Site by <a class="dark" href="https://wyliefisher.com" target="_blank">Wylie</a></small>
   </div>
 </footer>
 
