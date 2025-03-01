@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Quotes from '../components/Quotes.astro';
+---
+<BaseLayout>
+	<div class="inner-layout">
+		<h2>Contact</h2>
+		<Quotes />
+		<p>Please contact me to set up a 20-ish minute free consultation phone call. In this call  I will ask you some questions about what you are experiencing and you can also ask me questions you have about the way that I approach therapy or anything else.</p>
+		<iframe src=https://docs.google.com/forms/d/e/1FAIpQLSfK01kACgJMPDCq7vgftIMhS9ecjTdy9qoXkSQtwGtdJ-fmXQ/viewform?embedded=true>Loading…</iframe>
+		<p><em>All services are confidential.</em></p>
+		<p><em>If you need immediate support call <strong>911</strong> or <strong>988</strong></em></p>
+	</div>
+</BaseLayout>
+
+<style>
+	iframe {
+		width: 100%;
+		height: 960px;
+		border: 0;
+	}
+</style>
