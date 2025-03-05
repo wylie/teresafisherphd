@@ -1,5 +1,4 @@
 ---
-import { Debug } from 'astro:components';
 import Meta from '../components/Meta.astro'
 import HeadingHome from '../components/HeadingHome.astro';
 import HeadingInternal from '../components/HeadingInternal.astro';
@@ -14,7 +13,6 @@ const currentPath = Astro.url.pathname;
 		<Meta />
 	</head>
 	<body class="layout">
-		<Debug answer={currentPath} />
 		{currentPath.endsWith('/teresafisherphd') ? (
 			<HeadingHome />
 		) : (
