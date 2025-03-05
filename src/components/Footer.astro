@@ -7,6 +7,7 @@ const currentYear = new Date().getFullYear();
 
 <footer class=`footer ${className}`>
   <div class="inner-layout">
+    <p class="call">For Immediate Support call or text 988</p>
     <Image class="image" src={logo} alt="Milkweed Mental Health Logo" />
     <address>
       <p><a class="dark" href="mailto:teresa@teresafisherphd.com">teresa@teresafisherphd.com</a> <span class="divider">|</span> <a class="dark" href="tel:+18282762290">(828) 276-2290</a></p>
@@ -33,6 +34,9 @@ const currentYear = new Date().getFullYear();
     text-align: center;
     padding: 1rem 1rem .5rem;
   }
+  .call {
+    margin-top: 0;
+  }
   .image {
     width: 200px;
     height: auto;
@@ -50,7 +54,7 @@ const currentYear = new Date().getFullYear();
   @media screen and (min-width: 650px) {
     .footer .inner-layout {
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr auto;
+      grid-template-rows: auto auto 1fr auto;
       gap: 1rem;
     }
     .image {
@@ -75,6 +79,10 @@ const currentYear = new Date().getFullYear();
     address span {
       display: block;
     }
+    .call {
+      margin: 0;
+    }
+    .call,
     small {
       grid-column-start: 1;
       grid-column-end: 3;
