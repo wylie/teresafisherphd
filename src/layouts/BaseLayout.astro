@@ -13,7 +13,7 @@ const currentPath = Astro.url.pathname;
 		<Meta />
 	</head>
 	<body class="layout">
-		{currentPath === '/teresafisherphd/' ? (
+		{currentPath.endsWith('/teresafisherphd/') ? (
 			<HeadingHome />
 		) : (
 			<HeadingInternal />
