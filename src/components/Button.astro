@@ -1,0 +1,21 @@
+---
+const { url, ...rest } = Astro.props;
+---
+<a href={url} class="button" {...rest}><slot /></a>
+
+<style>
+	.button {
+		display: flex;
+		justify-self: center;
+		text-transform: uppercase;
+		background-color: var(--color-5);
+		color: var(--color-4);
+		padding: .5rem .75rem;
+		width: fit-content;
+		margin: auto;
+		transition: all 0.2s;
+	}
+	.button:hover {
+		background-color: var(--color-5-hover);
+	}
+</style>

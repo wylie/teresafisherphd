@@ -1,0 +1,15 @@
+---
+const { ...rest } = Astro.props;
+---
+<div class="grid" {...rest}>
+  <slot />
+</div>
+
+<style>
+	.grid {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 2rem 1rem;
+	}
+</style>
