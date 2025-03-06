@@ -1,9 +1,22 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Button from '../../components/Button.astro';
+import Images from '../../components/Images.astro';
+import Grid from '../../components/Grid.astro';
+import Image1 from '../../assets/images/individual-therapy-1.png';
+import Image2 from '../../assets/images/individual-therapy-2.png';
+import Image3 from '../../assets/images/individual-therapy-3.png';
 ---
 <BaseLayout>
 	<div class="inner-layout">
 		<h2>Individual Therapy</h2>
 		<p>For adults who are ready to engage with themselves and me with curiosity. Therapy can help people with new or unexpected challenges or feelings (a life transition, a loss, an unexpected event) or longer standing patterns of thoughts or feelings. Therapy can help build awareness, fill your coping toolbox, and improve your relationships.</p>
+		<Grid style={{marginBottom: "2rem"}}>
+			<Images src={Image1} alt="Headshot of Teresa Fisher, PhD." class="img" />
+			<Images src={Image3} alt="Headshot of Teresa Fisher, PhD." class="img" />
+			<Images src={Image2} alt="Headshot of Teresa Fisher, PhD." class="img" />
+		</Grid>
+			<Button url="/teresafisherphd/contact">Connect with me</Button>
 	</div>
 </BaseLayout>
+

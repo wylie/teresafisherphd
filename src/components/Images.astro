@@ -1,15 +1,16 @@
 ---
 import { Image } from 'astro:assets';
-const { src, alt, float = "" } = Astro.props;
+const { src, alt, float = "", fullwidth } = Astro.props;
 ---
 
 <div class=`wrapper ${float}`>
-  <Image class="img" src={src} alt={alt} />
+  <Image class=`img ${fullwidth ? 'fullwidth' : ""}` src={src} alt={alt} />
 </div>
 
 <style>
   .wrapper {
     position: relative;
+    width: fit-content;
     margin-left: 10px;
   }
   .wrapper::before {
@@ -38,7 +39,7 @@ const { src, alt, float = "" } = Astro.props;
       float: right;
       margin-left: 1rem;
       margin-bottom: 1rem;
-    }    
+    }
     .img {
       width: 45vw;
       height: auto;
@@ -48,5 +49,8 @@ const { src, alt, float = "" } = Astro.props;
     .img {
       width: 300px;
     }
+    .img.fullwidth {
+      width: 100%;
+    } 
   }
 </style>

@@ -1,9 +1,14 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Button from '../../components/Button.astro';
+import Images from '../../components/Images.astro';
+import Healinginprogress from '../../assets/images/emdr.png';
 ---
 <BaseLayout>
 	<div class="inner-layout">
 		<h2>EMDR</h2>
+		<Images src={Healinginprogress} alt="EMDR" float="right" />
 		<p>EMDR, or Eye Movement Desensitization and Reprocessing, is amazing!</p>
+		<Button url="/teresafisherphd/contact">Connect with me</Button>
 	</div>
 </BaseLayout>

@@ -1,11 +1,14 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Images from '../../components/Images.astro';
+import Photo from '../../assets/images/education-training.png';
 ---
 
 <BaseLayout>
   <div class="inner-layout">
     <h2>Education, Licensure, & Training</h2>
     <h3>Degrees</h3>
+    <Images src={Photo} alt="Stack of psychology books" float="right" />
     <ul>
       <li>APA Accredited Counseling Psychology Ph.D.,<br/><em>Auburn University, Auburn, AL</em></li>
       <li>Psychology B.A.,<br/><em>The University of Arizona, Tucson, AZ</em></li>
@@ -20,9 +23,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </ul>
     <h3>Licensure</h3>
     <ul>
-      <li>Licensed Health Service Psychologist</li>
-      <li>Massachusetts #9516</li>
-      <li>North Carolina #620</li>
+      <li>Licensed Health Service Psychologist<br/>
+        <em>Massachusetts #9516</em><br/>
+        <em>North Carolina #6209</em>
+      </li>
     </ul>
   </div>
 </BaseLayout>
