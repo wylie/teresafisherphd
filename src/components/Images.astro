@@ -3,57 +3,42 @@ import { Image } from 'astro:assets';
 const { src, alt, float = "", fullwidth } = Astro.props;
 ---
 
-<div class=`wrapper ${float}`>
-  <Image class=`img ${fullwidth ? 'fullwidth' : ""}` src={src} alt={alt} />
-</div>
+<Image class=`img ${fullwidth ? 'fullwidth' : ""} ${float}` src={src} alt={alt} />
 
 <style>
-  .wrapper {
-    position: relative;
-    width: fit-content;
-    margin-left: 10px;
-  }
-  .wrapper::before {
-    position: absolute;
-    content: "";
-    background-color: var(--color-3);
-    left: -10px;
-    bottom: -10px;
-    width: 100%;
-    height: 100%;
-  }
   .img {
     width: 100%;
     height: auto;
     display: block;
     position: relative;
+    box-shadow: -10px 10px 0 var(--color-3);
   }
+  .img:not(.fullwidth) {
+    max-width: 300px;
+  }
+  .fullwidth {
+    max-width: 100%;
+  } 
   @media screen and (min-width: 350px) {
-    .wrapper.left {
+    .left {
       float: left;
       margin-right: 1rem;
       margin-left: 10px;
       margin-bottom: 1rem;
     }
-    .wrapper.right {
+    .right {
       float: right;
       margin-left: 1rem;
       margin-bottom: 1rem;
     }
-    .img {
-      width: 45vw;
+    .img:not(.fullwidth) {
+      width: 40vw;
       height: auto;
     }
-    .img.fullwidth {
-      width: 100%;
-    } 
   }
-  @media screen and (min-width: 600px) {
-    .img {
-      width: 300px;
+  @media screen and (min-width: 768px) {
+    .img:not(.fullwidth) {
+      width: 29vw;
     }
-    .img.fullwidth {
-      width: 100%;
-    } 
   }
 </style>
