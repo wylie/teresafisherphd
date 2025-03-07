@@ -7,23 +7,17 @@ const { src, alt, float = "", fullwidth } = Astro.props;
 
 <style>
   .img {
-    width: 100%;
+    position: relative;
+    max-width: calc(100% - 10px);
+    margin-left: 10px;
     height: auto;
     display: block;
-    position: relative;
     box-shadow: -10px 10px 0 var(--color-3);
   }
-  .img:not(.fullwidth) {
-    max-width: 300px;
-  }
-  .fullwidth {
-    max-width: 100%;
-  } 
-  @media screen and (min-width: 350px) {
+  @media screen and (min-width  : 350px) {
     .left {
       float: left;
       margin-right: 1rem;
-      margin-left: 10px;
       margin-bottom: 1rem;
     }
     .right {
@@ -31,6 +25,8 @@ const { src, alt, float = "", fullwidth } = Astro.props;
       margin-left: 1rem;
       margin-bottom: 1rem;
     }
+  }
+  @media screen and (min-width: 500px) {
     .img:not(.fullwidth) {
       width: 40vw;
       height: auto;
@@ -38,6 +34,7 @@ const { src, alt, float = "", fullwidth } = Astro.props;
   }
   @media screen and (min-width: 768px) {
     .img:not(.fullwidth) {
+      max-width: 300px;
       width: 29vw;
     }
   }
