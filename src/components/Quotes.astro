@@ -28,10 +28,6 @@ const { float = "" } = Astro.props;
 <blockquote id="quote-container" class=`quote ${float}`></blockquote>
 
 <style>
-  .wrap {
-    position: relative;
-    z-index: 2;
-  }
   .quote {
     position: relative;
     background-color: var(--color-3);
@@ -51,7 +47,7 @@ const { float = "" } = Astro.props;
     top: 30px;
     left: -10px;
   }
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 768px) {
     .left {
       float: left;
       width: 300px;
