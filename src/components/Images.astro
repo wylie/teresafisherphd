@@ -17,13 +17,13 @@ const { src, alt, float = "", fullwidth } = Astro.props;
   @media screen and (min-width  : 350px) {
     .left {
       float: left;
-      margin-right: 1rem;
-      margin-bottom: 1rem;
+      margin-right: calc(1rem + 10px);
+      margin-bottom: calc(1rem + 10px);
     }
     .right {
       float: right;
-      margin-left: 1rem;
-      margin-bottom: 1rem;
+      margin-left: calc(1rem + 10px);
+      margin-bottom: calc(1rem + 10px);
     }
   }
   @media screen and (min-width: 500px) {
