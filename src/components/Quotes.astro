@@ -39,24 +39,26 @@ const { align = "" } = Astro.props;
     font-size: 1rem;
   }
   .quote::before {
+    position: absolute;
     content: open-quote;
     font-size: 8rem;
     vertical-align: -0.4em;
     line-height: 0;
-    position: absolute;
     top: 30px;
     left: -10px;
   }
   @media screen and (min-width: 768px) {
+    .left,
+    .right {
+      width: 300px;
+    }
     .left {
       float: left;
-      width: 300px;
       margin-left: 0;
       margin-right: 1rem;
     }
     .right {
       float: right;
-      width: 300px;
       margin-right: 0;
       margin-left: 1rem;
     }

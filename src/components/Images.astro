@@ -14,7 +14,7 @@ const { src, alt, align = "", ...rest } = Astro.props;
     margin: 0 0 calc(1rem + 10px) 10px;
     box-shadow: -10px 10px 0 var(--color-3);
   }
-  @media screen and (min-width  : 350px) {
+  @media screen and (min-width  : 500px) {
     .left,
     .right,
     .center {
@@ -34,17 +34,5 @@ const { src, alt, align = "", ...rest } = Astro.props;
       float: right;
       margin-left: calc(1rem + 10px);
     }
-  }
-  @media screen and (min-width: 500px) {
-    /* .img {
-      width: 40vw;
-      height: auto;
-    } */
-  }
-  @media screen and (min-width: 768px) {
-    /* .img {
-      max-width: 300px;
-      width: 29vw;
-    } */
   }
 </style>

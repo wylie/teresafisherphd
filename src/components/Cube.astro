@@ -1,9 +1,9 @@
 ---
-const { title, url, alt, ...rest } = Astro.props;
+const { title, url, alt, width, height, ...rest } = Astro.props;
 ---
 <div class="cube" {...rest}>
   <span class="title">{title}</span>
-  <img class="image" src={url} alt={alt} />
+  <img class="image" src={url} alt={alt} width={width} height={height} />
 </div>
 
 <style>
@@ -16,15 +16,5 @@ const { title, url, alt, ...rest } = Astro.props;
 	}
 	.title {
 		font-size: 1rem;;
-	}
-	.image {
-		max-width: 200px;
-		width: 100%;
-	}
-	@media (min-width: 600px) {
-		.table {
-			grid-template-columns: 1fr 1fr 1fr 1fr;
-			grid-template-rows: auto 1fr;
-		}
 	}
 </style>
