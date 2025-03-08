@@ -9,17 +9,15 @@ const currentYear = new Date().getFullYear();
   <div class="inner-layout">
     <p class="call">For Immediate Support call or text 988</p>
     <Image class="image" src={logo} alt="Milkweed Mental Health Logo" />
-    <address>
-      <p><a class="dark" href="mailto:teresa@teresafisherphd.com">teresa@teresafisherphd.com</a> <span class="divider">|</span> <a class="dark" href="tel:+18282762290">(828) 276-2290</a></p>
-      <p class="address">
-        <a class="dark" href="geo:35.594844,-82.551677">
-          <span>9 SW Pack Sq.</span>
-          <span>Suite 204 E1-A</span>
-          <span>Asheville, NC 28801</span>
-        </a>
-      </p>
+    <address class="contact">
+      <a class="dark line" href="mailto:teresa@teresafisherphd.com">teresa@teresafisherphd.com</a> <span class="divider">|</span> <a class="dark line" href="tel:+18282762290">(828) 276-2290</a>
+      <a class="dark address" href="geo:35.594844,-82.551677">
+        <span>9 SW Pack Sq.</span>
+        <span>Suite 204 E1-A</span>
+        <span>Asheville, NC 28801</span>
+      </a>
     </address>
-    <small>&copy; {currentYear} Teresa Fisher, PhD. PLLC | Site by <a class="dark" href="https://wyliefisher.com" target="_blank">Wylie</a> | Graphics by <a class="dark" href="https://www.christymichellestudio.com" target="_blank">Christy Michelle Studio</a></small>
+    <small><span class="line">&copy; {currentYear} Teresa Fisher, PhD. PLLC</span> <span class="divider">|</span> <span class="line">Site by <a class="dark" href="https://wyliefisher.com" target="_blank">Wylie</a> <span class="divider">|</span> <span class="line">Graphics by <a class="dark" href="https://www.christymichellestudio.com" target="_blank">Christy Michelle Studio</a></span></small>
   </div>
 </footer>
 
@@ -43,14 +41,22 @@ const currentYear = new Date().getFullYear();
     height: auto;
     justify-self: center;
   }
-  .address span {
-    white-space: nowrap;
-  }
-  address {
+  .contact {
     font-style: normal;
   }
+  .contact a,
   small {
-    margin-top: 1rem;
+    margin-top: .75rem;
+    display: block;
+  }
+  .line {
+    display: block;
+  }
+  .divider {
+    display: none;
+  }
+  .address span {
+    white-space: nowrap;
   }
   @media screen and (min-width: 650px) {
     .footer .inner-layout {
@@ -61,24 +67,32 @@ const currentYear = new Date().getFullYear();
     .image {
       width: 100%;
     }
-    address {
+    .contact {
       display: flex;
       flex-direction: column;
       justify-content: center;
     }
-    address .divider {
+    .contact a:first-child,
+    small {
+      margin-top: 0;
+    }
+    .contact .divider {
       display: none;
     }
-    address p {
+    .contact p {
       margin: 0;
       width: 75%;
     }
-    address a {
-      margin-top: 1rem;
+    .contact a {
+      /* margin-top: 1rem; */
       display: block;
     }
-    address span {
+    .contact span {
       display: block;
+    }
+    .line,
+    .divider {
+      display: inline-block;
     }
     .call {
       margin: 0;
