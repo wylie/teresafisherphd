@@ -3,7 +3,7 @@ const { title, url, alt, ...rest } = Astro.props;
 ---
 <div class="cube" {...rest}>
   <span class="title">{title}</span>
-  <img src={url} alt={alt} />
+  <img class="image" src={url} alt={alt} />
 </div>
 
 <style>
@@ -17,7 +17,7 @@ const { title, url, alt, ...rest } = Astro.props;
 	.title {
 		font-size: 1rem;;
 	}
-	.cube > img {
+	.image {
 		max-width: 200px;
 		width: 100%;
 	}

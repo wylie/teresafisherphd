@@ -1,41 +1,50 @@
 ---
 import { Image } from 'astro:assets';
-const { src, alt, float = "", fullwidth } = Astro.props;
+const { src, alt, align = "", ...rest } = Astro.props;
 ---
 
-<Image class=`img ${fullwidth ? 'fullwidth' : ""} ${float}` src={src} alt={alt} />
+<Image class=`img ${align}` src={src} alt={alt} {...rest} />
 
 <style>
   .img {
     position: relative;
-    max-width: calc(100% - 10px);
-    margin: 0 0 calc(1rem + 10px) 10px;
-    height: auto;
     display: block;
+    max-width: calc(100% - 10px);
+    height: auto;
+    margin: 0 0 calc(1rem + 10px) 10px;
     box-shadow: -10px 10px 0 var(--color-3);
   }
   @media screen and (min-width  : 350px) {
+    .left,
+    .right,
+    .center {
+      max-width: 300px;
+      margin-bottom: calc(1rem + 10px);
+    }
     .left {
       float: left;
       margin-right: calc(1rem + 10px);
-      margin-bottom: calc(1rem + 10px);
+    }
+    .center {
+      margin: auto;
+      margin-right: calc(1rem + 10px);
+      margin-left: calc(1rem + 10px);
     }
     .right {
       float: right;
       margin-left: calc(1rem + 10px);
-      margin-bottom: calc(1rem + 10px);
     }
   }
   @media screen and (min-width: 500px) {
-    .img:not(.fullwidth) {
+    /* .img {
       width: 40vw;
       height: auto;
-    }
+    } */
   }
   @media screen and (min-width: 768px) {
-    .img:not(.fullwidth) {
+    /* .img {
       max-width: 300px;
       width: 29vw;
-    }
+    } */
   }
 </style>

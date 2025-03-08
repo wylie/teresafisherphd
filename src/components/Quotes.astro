@@ -1,5 +1,5 @@
 ---
-const { float = "" } = Astro.props;
+const { align = "" } = Astro.props;
 ---
 
 <!-- TODO: clean this up a lot, I don't like all the element creation -->
@@ -25,7 +25,7 @@ const { float = "" } = Astro.props;
   appendQuote();
 </script>
 
-<blockquote id="quote-container" class=`quote ${float}`></blockquote>
+<blockquote id="quote-container" class=`quote ${align}`></blockquote>
 
 <style>
   .quote {

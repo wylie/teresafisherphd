@@ -2,7 +2,6 @@
 import { Image } from 'astro:assets';
 import logo from '../assets/images/logo.png';
 const { class: className } = Astro.props;
-const currentYear = new Date().getFullYear();
 ---
 
 <footer class=`footer ${className}`>
@@ -17,7 +16,7 @@ const currentYear = new Date().getFullYear();
         <span>Asheville, NC 28801</span>
       </a>
     </address>
-    <small><span class="line">&copy; {currentYear} Teresa Fisher, PhD. PLLC</span> <span class="divider">|</span> <span class="line">Site by <a class="dark" href="https://wyliefisher.com" target="_blank">Wylie</a> <span class="divider">|</span> <span class="line">Graphics by <a class="dark" href="https://www.christymichellestudio.com" target="_blank">Christy Michelle Studio</a></span></small>
+    <small><span class="line">&copy; {new Date().getFullYear()} Teresa Fisher, PhD. PLLC</span> <span class="divider">|</span> <span class="line">Site by <a class="dark" href="https://wyliefisher.com" target="_blank">Wylie</a> <span class="divider">|</span> <span class="line">Graphics by <a class="dark" href="https://www.christymichellestudio.com" target="_blank">Christy Michelle Studio</a></span></small>
   </div>
 </footer>
 
