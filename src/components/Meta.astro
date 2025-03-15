@@ -2,7 +2,32 @@
 import ShareImage from '../assets/images/share-image.png'
 import Favicon from './Favicon.astro';
 
+const currentPath = Astro.url.pathname;
+let pageTitle = '';
+
+if (currentPath === '/teresafisherphd/') {
+  pageTitle = "Teresa Fisher, PhD.";
+} else if (currentPath === '/teresafisherphd/about/who-am-i') {
+  pageTitle = "Teresa Fisher, PhD. / About / Who Am I?";
+} else if (currentPath === '/teresafisherphd/about/my-approach') {
+  pageTitle = "Teresa Fisher, PhD. / About / My Approach";
+} else if (currentPath === '/teresafisherphd/about/education-and-training') {
+  pageTitle = "Teresa Fisher, PhD. / About / Education & Training";
+} else if (currentPath.startsWith('/teresafisherphd/services/individual-therapy')) {
+  pageTitle = "Teresa Fisher, PhD. / Services / Individual Therapy";
+} else if (currentPath.startsWith('/teresafisherphd/services/emdr')) {
+  pageTitle = "Teresa Fisher, PhD. / Services / EMDR";
+} else if (currentPath.startsWith('/teresafisherphd/services/supervision-and-consultation')) {
+  pageTitle = "Teresa Fisher, PhD. / Services / Supervision & Consultation";
+} else if (currentPath.startsWith('/teresafisherphd/services/community-outreach')) {
+  pageTitle = "Teresa Fisher, PhD. / Services / Community Outreach";
+} else if (currentPath.startsWith('/teresafisherphd/rates-and-insurance')) {
+  pageTitle = "Teresa Fisher, PhD. / Rates & Insurance";
+} else if (currentPath.startsWith('/teresafisherphd/contact')) {
+  pageTitle = "Teresa Fisher, PhD. / Contact";
+}
 ---
+
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="generator" content={Astro.generator} />
@@ -15,7 +40,7 @@ import Favicon from './Favicon.astro';
 <meta property="og:site_name" content="Teresa Fisher, PhD., Milkweed Mental Health" />
 <meta property="og:locale" content="en_US" />
 <link rel="sitemap" href="/sitemap-index.xml" />
-<title>Teresa Fisher, PhD.</title>
+<title>{pageTitle}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Englebert&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
