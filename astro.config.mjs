@@ -7,5 +7,6 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://wylie.github.io',
   base: 'teresafisherphd',
-  integrations: [partytown(), sitemap()]
+  integrations: [partytown(), sitemap()],
+  trailingSlash: 'always'
 });
