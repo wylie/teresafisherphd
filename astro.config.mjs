@@ -5,8 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://wylie.github.io',
-  base: 'teresafisherphd',
+  site: 'https://teresafisherphd.com',
   integrations: [partytown(), sitemap()],
   trailingSlash: 'always'
 });

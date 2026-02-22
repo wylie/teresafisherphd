@@ -5,25 +5,25 @@ import Favicon from './Favicon.astro';
 const currentPath = Astro.url.pathname;
 let pageTitle = '';
 
-if (currentPath === '/teresafisherphd/') {
+if (currentPath === '/') {
   pageTitle = "Teresa Fisher, PhD.";
-} else if (currentPath === '/teresafisherphd/about/who-am-i/') {
+} else if (currentPath === '/about/who-am-i/') {
   pageTitle = "Teresa Fisher, PhD. / About / Who Am I?";
-} else if (currentPath === '/teresafisherphd/about/my-approach/') {
+} else if (currentPath === '/about/my-approach/') {
   pageTitle = "Teresa Fisher, PhD. / About / My Approach";
-} else if (currentPath === '/teresafisherphd/about/education-and-training/') {
+} else if (currentPath === '/about/education-and-training/') {
   pageTitle = "Teresa Fisher, PhD. / About / Education & Training";
-} else if (currentPath.startsWith('/teresafisherphd/services/individual-therapy/')) {
+} else if (currentPath.startsWith('/services/individual-therapy/')) {
   pageTitle = "Teresa Fisher, PhD. / Services / Individual Therapy";
-} else if (currentPath.startsWith('/teresafisherphd/services/emdr/')) {
+} else if (currentPath.startsWith('/services/emdr/')) {
   pageTitle = "Teresa Fisher, PhD. / Services / EMDR";
-} else if (currentPath.startsWith('/teresafisherphd/services/supervision-and-consultation/')) {
+} else if (currentPath.startsWith('/services/supervision-and-consultation/')) {
   pageTitle = "Teresa Fisher, PhD. / Services / Supervision & Consultation";
-} else if (currentPath.startsWith('/teresafisherphd/services/community-outreach/')) {
+} else if (currentPath.startsWith('/services/community-outreach/')) {
   pageTitle = "Teresa Fisher, PhD. / Services / Community Outreach";
-} else if (currentPath.startsWith('/teresafisherphd/rates-and-insurance/')) {
+} else if (currentPath.startsWith('/rates-and-insurance/')) {
   pageTitle = "Teresa Fisher, PhD. / Rates & Insurance";
-} else if (currentPath.startsWith('/teresafisherphd/contact/')) {
+} else if (currentPath.startsWith('/contact/')) {
   pageTitle = "Teresa Fisher, PhD. / Contact";
 }
 
