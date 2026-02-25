@@ -1,11 +1,21 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Button from '../../components/Button.astro';
+import Images from '../../components/Images.astro';
+import CommunityOutreachImage from '../../assets/images/community-outreach.png';
 ---
 <BaseLayout>
 	<div class="inner-layout">
 		<h2>Community Outreach</h2>
+		<Images src={CommunityOutreachImage} alt="Community Outreach" align="right" />
 		<p>Do you have a group or organization that could use an experiential workshop to help manage stress or communicate more effectively? I'd LOVE to hear from you!</p>
+		<p>I've helped groups connect and learn together for many years, some of my favorites:</p>
+		<ul>
+			<li>Workshops designed to understand the way stress impacts our bodies and brains and how we can respond to it.</li>
+			<li>Workshops designed to understand and appreciate different personality styles and the strengths and blind spots of working with each other.</li>
+			<li>Creative space workshops designed around an art or creative activity to challenge new parts of our brains.</li>
+			<li>Effective Listening and Communication</li>
+		</ul>
 		<Button url="/contact">Connect with me</Button>
 	</div>
 </BaseLayout>
