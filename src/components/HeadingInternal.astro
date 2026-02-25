@@ -35,6 +35,7 @@ const {class: className, ...rest } = Astro.props;
     grid-column-start: 2;
     grid-row-start: 1;
     align-self: end;
+    justify-self: start;
   }
   .title .llc {
     grid-row-start: 2;
@@ -45,6 +46,7 @@ const {class: className, ...rest } = Astro.props;
     grid-column-start: 1;
     grid-row-start: 1;
     grid-row-end: 3;
+    justify-self: center;
   }
   @media screen and (min-width: 650px) {
     .title .name,
@@ -55,6 +57,7 @@ const {class: className, ...rest } = Astro.props;
       grid-column-start: 1;
       grid-row-start: unset;
       align-self: center;
+      justify-self: end;
     }
     .title .llc {
       grid-row-start: unset;
