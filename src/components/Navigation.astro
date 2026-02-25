@@ -4,7 +4,7 @@
   <ul class="nav-list">
     <li class="nav-item"><a href="/">Welcome</a></li>
     <li class="nav-item" id="about">
-      About
+      <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="about-menu">About</button>
       <ul class="about-list">
         <li><a href="/about/who-am-i/">Who Am I?</a></li>
         <li><a href="/about/my-approach/">My Approach</a></li>
@@ -12,7 +12,7 @@
       </ul>
     </li>
     <li class="nav-item" id="services">
-      Services
+      <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="services-menu">Services</button>
       <ul class="services-list">
         <li><a href="/services/individual-therapy/">Individual Therapy</a></li>
         <li><a href="/services/emdr/">EMDR</a></li>
@@ -25,33 +25,49 @@
   </ul>
 </nav>
 
-<!-- TODO: crude, but it works. it's late. I'll clean this up at a later date -->
 <script>
-  const aboutItems = document.querySelectorAll('.about-list');
-  const aboutElement = document.getElementById('about');
-  const servicesItems = document.querySelectorAll('.services-list');
-  const servicesElement = document.getElementById('services');
+  const isTouchLike = window.matchMedia('(hover: none), (pointer: coarse)').matches;
 
-  aboutElement.addEventListener('click', (event) => {
-    event.stopPropagation();
-    aboutItems[0].classList.toggle('visible');
-    servicesItems[0].classList.remove('visible'); // Close services dropdown
-  });
+  if (isTouchLike) {
+    const aboutElement = document.getElementById('about');
+    const servicesElement = document.getElementById('services');
 
-  servicesElement.addEventListener('click', (event) => {
-    event.stopPropagation();
-    servicesItems[0].classList.toggle('visible');
-    aboutItems[0].classList.remove('visible'); // Close about dropdown
-  });
+    const aboutButton = aboutElement?.querySelector('.nav-trigger');
+    const servicesButton = servicesElement?.querySelector('.nav-trigger');
 
-  document.addEventListener('click', (event) => {
-    if (!aboutElement.contains(event.target)) {
-      aboutItems[0].classList.remove('visible');
-    }
-    if (!servicesElement.contains(event.target)) {
-      servicesItems[0].classList.remove('visible');
-    }
-  });
+    const aboutItems = aboutElement?.querySelector('.about-list');
+    const servicesItems = servicesElement?.querySelector('.services-list');
+
+    const closeMenus = () => {
+      aboutItems?.classList.remove('visible');
+      servicesItems?.classList.remove('visible');
+      aboutButton?.setAttribute('aria-expanded', 'false');
+      servicesButton?.setAttribute('aria-expanded', 'false');
+    };
+
+    aboutButton?.addEventListener('click', (event) => {
+      event.stopPropagation();
+      const isOpen = aboutItems?.classList.toggle('visible');
+      servicesItems?.classList.remove('visible');
+      aboutButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      servicesButton?.setAttribute('aria-expanded', 'false');
+    });
+
+    servicesButton?.addEventListener('click', (event) => {
+      event.stopPropagation();
+      const isOpen = servicesItems?.classList.toggle('visible');
+      aboutItems?.classList.remove('visible');
+      servicesButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      aboutButton?.setAttribute('aria-expanded', 'false');
+    });
+
+    document.addEventListener('click', (event) => {
+      const target = event.target as Node | null;
+      if (!aboutElement?.contains(target) && !servicesElement?.contains(target)) {
+        closeMenus();
+      }
+    });
+  }
 </script>
 
 <style>
@@ -63,11 +79,18 @@
   #about,
   #services {
     display: flex;
+    align-items: center;
     position: relative;
-    cursor: pointer;
+    justify-content: center;
+  }
+  .nav-trigger {
+    border: 0;
+    background: transparent;
     color: var(--color-6);
     text-decoration: underline;
-    justify-content: center;
+    cursor: pointer;
+    font: inherit;
+    padding: 0;
   }
   .about-list,
   .services-list {
@@ -97,8 +120,10 @@
   .services-list li:hover {
     background-color: var(--color-3);
   }
-  .about-list.visible,
-  .services-list.visible {
+  #about:hover .about-list,
+  #about:focus-within .about-list,
+  #services:hover .services-list,
+  #services:focus-within .services-list {
     opacity: 1;
     visibility: visible;
   }
@@ -122,8 +147,14 @@
   .nav-item {
     white-space: nowrap;
   }
+  .about-list.visible,
+  .services-list.visible {
+    opacity: 1;
+    visibility: visible;
+  }
   #about:hover,
-  #services:hover {
+  #services:hover,
+  .nav-trigger:hover {
     color: var(--color-6-hover);
   }
 </style>
