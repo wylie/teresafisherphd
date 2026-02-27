@@ -3,8 +3,8 @@ import Images from './Images.astro';
 const { title, url, alt, width, height, ...rest } = Astro.props;
 ---
 <div class="cube" {...rest}>
-  <Images class="image" src={url} alt={alt} width={width} height={height} />
-  <span class="title">{title}</span>
+	<Images class="image" src={url} alt={alt || `${title} illustration`} width={width} height={height} />
+	<span class="title">{title}</span>
 </div>
 
 <style>

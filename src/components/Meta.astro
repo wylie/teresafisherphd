@@ -3,28 +3,40 @@ import ShareImage from '../assets/images/share-image.png'
 import Favicon from './Favicon.astro';
 
 const currentPath = Astro.url.pathname;
-let pageTitle = '';
+let pageTitle = "Teresa Fisher, PhD.";
+let pageDescription = "Therapy, consultation, and mental health services by Teresa Fisher, PhD. in Asheville, NC. LGBTQ+ affirming, trauma-informed, and relational care.";
+let canonicalUrl = `https://teresafisherphd.com${currentPath}`;
 
 if (currentPath === '/') {
-  pageTitle = "Teresa Fisher, PhD.";
+  pageTitle = "Teresa Fisher, PhD. | Asheville Therapy & Consultation";
+  pageDescription = "Therapy, consultation, and mental health services by Teresa Fisher, PhD. in Asheville, NC. LGBTQ+ affirming, trauma-informed, and relational care.";
 } else if (currentPath === '/about/who-am-i/') {
-  pageTitle = "Teresa Fisher, PhD. / About / Who Am I?";
+  pageTitle = "Who Am I? | Teresa Fisher, PhD.";
+  pageDescription = "Learn about Teresa Fisher, PhD.—her background, values, and approach to therapy and consultation.";
 } else if (currentPath === '/about/my-approach/') {
-  pageTitle = "Teresa Fisher, PhD. / About / My Approach";
+  pageTitle = "My Approach | Teresa Fisher, PhD.";
+  pageDescription = "Discover Teresa Fisher, PhD.'s client-centered, relational, and trauma-informed approach to therapy.";
 } else if (currentPath === '/about/education-and-training/') {
-  pageTitle = "Teresa Fisher, PhD. / About / Education & Training";
+  pageTitle = "Education & Training | Teresa Fisher, PhD.";
+  pageDescription = "Education, licensure, and professional training of Teresa Fisher, PhD., licensed psychologist in NC and MA.";
 } else if (currentPath.startsWith('/services/individual-therapy/')) {
-  pageTitle = "Teresa Fisher, PhD. / Services / Individual Therapy";
+  pageTitle = "Individual Therapy | Teresa Fisher, PhD.";
+  pageDescription = "Individual therapy for adults in Asheville, NC. Support for anxiety, depression, life transitions, and more.";
 } else if (currentPath.startsWith('/services/emdr/')) {
-  pageTitle = "Teresa Fisher, PhD. / Services / EMDR";
+  pageTitle = "EMDR Therapy | Teresa Fisher, PhD.";
+  pageDescription = "EMDR therapy for trauma and distressing memories. Evidence-based treatment by Teresa Fisher, PhD.";
 } else if (currentPath.startsWith('/services/supervision-and-consultation/')) {
-  pageTitle = "Teresa Fisher, PhD. / Services / Supervision & Consultation";
+  pageTitle = "Supervision & Consultation | Teresa Fisher, PhD.";
+  pageDescription = "Clinical supervision and consultation for psychologists and therapists. Developmental, ethical, and supportive.";
 } else if (currentPath.startsWith('/services/community-outreach/')) {
-  pageTitle = "Teresa Fisher, PhD. / Services / Community Outreach";
+  pageTitle = "Community Outreach | Teresa Fisher, PhD.";
+  pageDescription = "Workshops and outreach for organizations and groups. Stress management, communication, and creative growth.";
 } else if (currentPath.startsWith('/rates-and-insurance/')) {
-  pageTitle = "Teresa Fisher, PhD. / Rates & Insurance";
+  pageTitle = "Rates & Insurance | Teresa Fisher, PhD.";
+  pageDescription = "Rates, insurance, and sliding scale information for therapy and consultation with Teresa Fisher, PhD.";
 } else if (currentPath.startsWith('/contact/')) {
-  pageTitle = "Teresa Fisher, PhD. / Contact";
+  pageTitle = "Contact | Teresa Fisher, PhD.";
+  pageDescription = "Contact Teresa Fisher, PhD. to schedule a consultation or ask questions about therapy and services.";
 }
 
 ---
@@ -32,15 +44,16 @@ if (currentPath === '/') {
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="generator" content={Astro.generator} />
-<meta name="description" content="Ahoy!">
+<meta name="description" content={pageDescription}>
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Teresa Fisher, PhD., Milkweed Mental Health" />
+<meta property="og:title" content={pageTitle} />
 <meta property="og:image" content={ShareImage.src} />
 <meta property="og:image:alt" content="Milkweed Mental Health" />
-<meta property="og:description" content="Ahoy! Teresa Fisher, PhD." />
+<meta property="og:description" content={pageDescription} />
 <meta property="og:site_name" content="Teresa Fisher, PhD., Milkweed Mental Health" />
 <meta property="og:locale" content="en_US" />
-<link rel="sitemap" href="/sitemap-index.xml" />
+<link rel="canonical" href={canonicalUrl} />
+<link rel="sitemap" href="/sitemap.xml" />
 <title>{pageTitle}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,7 +63,32 @@ if (currentPath === '/') {
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-3J4GXJ4V1L');
+</script>
+<script type="application/ld+json" is:inline>
+  {JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Teresa Fisher, PhD.",
+    "jobTitle": "Psychologist",
+    "url": "https://teresafisherphd.com",
+    "image": ShareImage.src,
+    "sameAs": [
+      "https://www.linkedin.com/in/teresa-fisher-phd/"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Milkweed Mental Health"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "9 SW Pack Sq. Suite 204 E1-A",
+      "addressLocality": "Asheville",
+      "addressRegion": "NC",
+      "postalCode": "28801",
+      "addressCountry": "US"
+    },
+    "telephone": "+18282762290"
+  })}
 </script>
 <Favicon />

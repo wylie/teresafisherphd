@@ -7,14 +7,25 @@ const {class: className, ...rest } = Astro.props;
 ---
 <header class=`header ${className}` {...rest}>
   <div class="inner-layout">
-    <h1 class="title">
+    <h1 class="visually-hidden">Therapy & Consultation in Asheville, NC</h1>
+    <div class="title">
       <Image src={logo} class="logo" alt="logo" />
-    </h1>
+    </div>
     <Navigation />
   </div>
 </header>
 
 <style>
+  .visually-hidden {
+    position: absolute !important;
+    height: 1px; width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+    border: 0;
+    padding: 0;
+    margin: -1px;
+  }
   .title {
     display: flex;
     flex-direction: column;
