@@ -6,6 +6,30 @@ const currentPath = Astro.url.pathname;
 let pageTitle = "Teresa Fisher, PhD.";
 let pageDescription = "Therapy, consultation, and mental health services by Teresa Fisher, PhD. in Asheville, NC. LGBTQ+ affirming, trauma-informed, and relational care.";
 let canonicalUrl = `https://teresafisherphd.com${currentPath}`;
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Teresa Fisher, PhD.",
+  "jobTitle": "Psychologist",
+  "url": "https://teresafisherphd.com",
+  "image": ShareImage.src,
+  "sameAs": [
+    "https://www.linkedin.com/in/teresa-fisher-phd/"
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Milkweed Mental Health"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "9 SW Pack Sq. Suite 204 E1-A",
+    "addressLocality": "Asheville",
+    "addressRegion": "NC",
+    "postalCode": "28801",
+    "addressCountry": "US"
+  },
+  "telephone": "+18282762290"
+};
 
 if (currentPath === '/') {
   pageTitle = "Teresa Fisher, PhD. | Asheville Therapy & Consultation";
@@ -65,30 +89,5 @@ if (currentPath === '/') {
   gtag('js', new Date());
   gtag('config', 'G-3J4GXJ4V1L');
 </script>
-<script type="application/ld+json" is:inline>
-  {JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Teresa Fisher, PhD.",
-    "jobTitle": "Psychologist",
-    "url": "https://teresafisherphd.com",
-    "image": ShareImage.src,
-    "sameAs": [
-      "https://www.linkedin.com/in/teresa-fisher-phd/"
-    ],
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Milkweed Mental Health"
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "9 SW Pack Sq. Suite 204 E1-A",
-      "addressLocality": "Asheville",
-      "addressRegion": "NC",
-      "postalCode": "28801",
-      "addressCountry": "US"
-    },
-    "telephone": "+18282762290"
-  })}
-</script>
+<script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
 <Favicon />
