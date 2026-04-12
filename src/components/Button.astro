@@ -1,7 +1,23 @@
 ---
-const { url, ...rest } = Astro.props;
+const {
+	url,
+	eventName,
+	eventLabel,
+	eventLocation,
+	...rest
+} = Astro.props;
+
+const shouldTrackContact = typeof url === 'string' && (url === '/contact' || url === '/contact/');
+const resolvedEventName = eventName ?? (shouldTrackContact ? 'contact_cta_click' : undefined);
 ---
-<a href={url} class="button" {...rest}>
+<a
+	href={url}
+	class="button"
+	data-analytics-event={resolvedEventName}
+	data-analytics-label={eventLabel}
+	data-analytics-location={eventLocation}
+	{...rest}
+>
 	<slot />
 </a>
 

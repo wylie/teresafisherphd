@@ -88,6 +88,95 @@ if (currentPath === '/') {
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-3J4GXJ4V1L');
+
+  const normalizePath = (path) => {
+    if (!path) return '/';
+    return path.endsWith('/') ? path : `${path}/`;
+  };
+
+  window.trackEvent = (eventName, params = {}) => {
+    if (typeof window.gtag !== 'function' || !eventName) return;
+    window.gtag('event', eventName, params);
+  };
+
+  const trackAnchorClick = (anchor) => {
+    if (!anchor) return;
+
+    const href = anchor.getAttribute('href') || '';
+    const linkText = (anchor.textContent || '').trim().slice(0, 120);
+    const params = {
+      page_path: window.location.pathname,
+      link_text: linkText || '(no text)',
+    };
+
+    const datasetEvent = anchor.dataset.analyticsEvent;
+    if (datasetEvent) {
+      window.trackEvent(datasetEvent, {
+        ...params,
+        event_label: anchor.dataset.analyticsLabel || linkText || undefined,
+        event_location: anchor.dataset.analyticsLocation || undefined,
+        link_url: href || undefined,
+      });
+      return;
+    }
+
+    if (href.startsWith('mailto:')) {
+      window.trackEvent('email_click', {
+        ...params,
+        email_address: href.replace('mailto:', ''),
+      });
+      return;
+    }
+
+    if (href.startsWith('tel:')) {
+      window.trackEvent('phone_click', {
+        ...params,
+        phone_number: href.replace('tel:', ''),
+      });
+      return;
+    }
+
+    let url;
+    try {
+      url = new URL(href, window.location.href);
+    } catch {
+      return;
+    }
+
+    if (normalizePath(url.pathname) === '/contact/' && url.origin === window.location.origin) {
+      window.trackEvent('contact_cta_click', {
+        ...params,
+        destination_path: '/contact/',
+      });
+      return;
+    }
+
+    if (url.origin !== window.location.origin) {
+      window.trackEvent('external_link_click', {
+        ...params,
+        link_url: url.href,
+        link_domain: url.hostname,
+      });
+    }
+  };
+
+  const bindAnalyticsHandlers = () => {
+    if (window.__tfAnalyticsBound) return;
+    window.__tfAnalyticsBound = true;
+
+    document.addEventListener('click', (event) => {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+      const anchor = target.closest('a');
+      trackAnchorClick(anchor);
+    });
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', bindAnalyticsHandlers);
+  } else {
+    bindAnalyticsHandlers();
+  }
 </script>
 <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
 <Favicon />
