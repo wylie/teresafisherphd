@@ -1,7 +1,10 @@
 ---
 import { Image } from 'astro:assets';
 import logo from '../assets/images/logo.png';
+import { siteMetadata } from '../data/site';
+
 const { class: className } = Astro.props;
+const officeLocation = siteMetadata.officeLocations[0];
 ---
 
 <footer class=`footer ${className}`>
@@ -9,14 +12,12 @@ const { class: className } = Astro.props;
     <p class="call">For Immediate Support call or text 988</p>
     <Image class="image" src={logo} alt="Milkweed Mental Health Logo" />
     <address class="contact">
-      <a class="dark line" href="mailto:teresa@teresafisherphd.com" data-analytics-event="email_click" data-analytics-location="footer">teresa@teresafisherphd.com</a> <span class="divider">|</span> <a class="dark line" href="tel:+18282762290" data-analytics-event="phone_click" data-analytics-location="footer">(828) 276-2290</a>
-      <a class="dark address" href="geo:35.594844,-82.551677">
-        <span>9 SW Pack Sq.</span>
-        <span>Suite 204 E1-A</span>
-        <span>Asheville, NC 28801</span>
+      <a class="dark line" href={`mailto:${siteMetadata.email}`} data-analytics-event="email_click" data-analytics-location="footer">{siteMetadata.email}</a> <span class="divider">|</span> <a class="dark line" href={`tel:${siteMetadata.telephone}`} data-analytics-event="phone_click" data-analytics-location="footer">{siteMetadata.phoneDisplay}</a>
+      <a class="dark address" href={officeLocation.geoUrl}>
+        {officeLocation.displayLines.map((line) => <span>{line}</span>)}
       </a>
     </address>
-    <small><span class="line">&copy; {new Date().getFullYear()} Teresa Fisher, PhD. PLLC</span> <span class="divider">|</span> <span class="line">Site by <a class="dark" href="https://wyliefisher.com" target="_blank">Wylie</a> <span class="divider">|</span> <span class="line">Graphics by <a class="dark" href="https://www.christymichellestudio.com" target="_blank">Christy Michelle Studio</a></span></small>
+    <small><span class="line">&copy; {new Date().getFullYear()} {siteMetadata.legalName}</span> <span class="divider">|</span> <span class="line">Site by <a class="dark" href="https://wyliefisher.com" target="_blank">Wylie</a> <span class="divider">|</span> <span class="line">Graphics by <a class="dark" href="https://www.christymichellestudio.com" target="_blank">Christy Michelle Studio</a></span></small>
   </div>
 </footer>
 

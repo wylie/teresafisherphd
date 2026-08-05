@@ -33,6 +33,10 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
+## SEO and Site Metadata
+
+Shared site metadata lives in `src/data/site.ts`. Page titles, descriptions, structured data, and the AI-friendly `/llms.txt` endpoint use this file so public practice information can be updated in one place.
+
 ## 👀 Want to learn more?
 
 Feel free to check [Astro's documentation](https://docs.astro.build) or join the [Astro Discord server](https://astro.build/chat).
